@@ -1,0 +1,8 @@
+import socket
+
+clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+clientsocket.bind(('', 8934))
+clientsocket.listen(10)
+conn, addr = clientsocket.accept()
+print ("Connected to %s:%s"%(addr[0],addr[1]))
+clientsocket.close()
